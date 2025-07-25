@@ -4,6 +4,10 @@ import * as XLSX from "xlsx"
 
 export const config: PlasmoCSConfig = {
   matches: [
+    "https://dify.hellotalk8.com/completion/rW1OtVAJGLmhEXnx",
+    "https://dify.hellotalk8.com/completion/AyIgXlXgHwiX2Bor",
+    "https://dify.hellotalk8.com/completion/5w1chddVUsCuCapq",
+    "https://dify.hellotalk8.com/completion/S5VpoijCouiLnmDa",
     "https://dify.hellotalk8.com/app/8be767c1-e992-4b69-acfa-494ac56fc0bd/*",
     "https://dify.hellotalk8.com/app/2bbc65a3-11bf-421b-904e-68f2ab2a2723/*",
     "https://dify.hellotalk8.com/app/0a17356c-ac99-4d04-b806-b8a28a6c9e27/*",
@@ -12,7 +16,10 @@ export const config: PlasmoCSConfig = {
     "https://dify.hellotalk8.com/app/dfd01f8f-cc1d-4503-9f66-4977acc78480/*",
     "https://dify.hellotalk8.com/app/4bf5cbef-b098-4628-b503-0533c946362b/*",
     "https://dify.hellotalk8.com/app/b02c0df7-0a86-4bea-9b96-7ec2f73b2feb/*",
-    "https://dify.hellotalk8.com/app/69e1fe5b-de4c-4302-b88b-69c381460443/*"
+    "https://dify.hellotalk8.com/app/69e1fe5b-de4c-4302-b88b-69c381460443/*",
+    "https://dify.hellotalk8.com/app/9de26a0a-937a-4b3c-8850-0e62c91b37cd/*",
+    "https://dify.hellotalk8.com/app/158639b8-0592-437e-b3bd-4894f1942432/*",
+    "https://dify.hellotalk8.com/app/a58bcf8c-3f18-462b-bef3-ab7a7f0c38d5/*"
   ]
 }
 
@@ -53,14 +60,17 @@ const PlasmoInline = () => {
 
     const apiKeyMap = {
       "8be767c1-e992-4b69-acfa-494ac56fc0bd": "app-rjuNJqBZKNvxlYxY5zDqtnkj",
-      "2bbc65a3-11bf-421b-904e-68f2ab2a2723": "app-G05xtxKVX2oO3Fz8HyhR2Cpa", // 德语
-      "0a17356c-ac99-4d04-b806-b8a28a6c9e27": "app-ktSXWnH3kWqkYqnlFNOy1W2z", // 法语
-      "c63e1ca7-ce97-4db8-a1cc-38e19a78488e": "app-AvZQNHimn6lH2H8G1gvyezdw", // 韩语
-      "2e58bc57-0e90-4f38-b77b-8cf4400de514": "app-UfpsXpSxk8gHbwqZR17Wf6yP", // 土耳其语
-      "dfd01f8f-cc1d-4503-9f66-4977acc78480": "app-exx0PgJYoR40WjTb5fo8rbgt", // 日语
-      "4bf5cbef-b098-4628-b503-0533c946362b": "app-PExLdIHEjVhkyWvgJ0B7dZzJ", // 墨西哥西语
-      "b02c0df7-0a86-4bea-9b96-7ec2f73b2feb": "app-s00gW1UymuJKp8TTSOc5fETK", // 西班牙语
-      "69e1fe5b-de4c-4302-b88b-69c381460443": "app-1a8u4KnIpc8ReVK0PR7LR0Vr" // 阿拉伯语
+      "2bbc65a3-11bf-421b-904e-68f2ab2a2723": "app-G05xtxKVX2oO3Fz8HyhR2Cpa",
+      "0a17356c-ac99-4d04-b806-b8a28a6c9e27": "app-ktSXWnH3kWqkYqnlFNOy1W2z",
+      "c63e1ca7-ce97-4db8-a1cc-38e19a78488e": "app-AvZQNHimn6lH2H8G1gvyezdw",
+      "2e58bc57-0e90-4f38-b77b-8cf4400de514": "app-UfpsXpSxk8gHbwqZR17Wf6yP",
+      "dfd01f8f-cc1d-4503-9f66-4977acc78480": "app-exx0PgJYoR40WjTb5fo8rbgt",
+      "4bf5cbef-b098-4628-b503-0533c946362b": "app-PExLdIHEjVhkyWvgJ0B7dZzJ",
+      "b02c0df7-0a86-4bea-9b96-7ec2f73b2feb": "app-s00gW1UymuJKp8TTSOc5fETK",
+      "69e1fe5b-de4c-4302-b88b-69c381460443": "app-1a8u4KnIpc8ReVK0PR7LR0Vr",
+      "9de26a0a-937a-4b3c-8850-0e62c91b37cd": "app-SdG7XzYDKcGPly6UMyPZ1iqT",
+      "158639b8-0592-437e-b3bd-4894f1942432": "app-8k7dPIG8od0ovKSDd0KTCQCZ",
+      "a58bcf8c-3f18-462b-bef3-ab7a7f0c38d5": "app-WAjPXv9t8BQpWkGsEmrJlU2r"
     }
 
     const apiKey = apiKeyMap[uuid] || "unknown"
@@ -80,14 +90,17 @@ const PlasmoInline = () => {
     const uuid = getUUID()
     const inputKeyMap = {
       "8be767c1-e992-4b69-acfa-494ac56fc0bd": "English_chat",
-      "2bbc65a3-11bf-421b-904e-68f2ab2a2723": "English_dialogue", // 德语
-      "0a17356c-ac99-4d04-b806-b8a28a6c9e27": "English_dialogue", // 法语
-      "c63e1ca7-ce97-4db8-a1cc-38e19a78488e": "English_dialogue", // 韩语
-      "2e58bc57-0e90-4f38-b77b-8cf4400de514": "English_dialogue", // 土耳其语
-      "dfd01f8f-cc1d-4503-9f66-4977acc78480": "English_chat", // 日语
-      "4bf5cbef-b098-4628-b503-0533c946362b": "English_chat", // 墨西哥西语
-      "b02c0df7-0a86-4bea-9b96-7ec2f73b2feb": "English_chat", // 西班牙语
-      "69e1fe5b-de4c-4302-b88b-69c381460443": "English_conversation" // 阿拉伯语
+      "2bbc65a3-11bf-421b-904e-68f2ab2a2723": "English_dialogue",
+      "0a17356c-ac99-4d04-b806-b8a28a6c9e27": "English_dialogue",
+      "c63e1ca7-ce97-4db8-a1cc-38e19a78488e": "English_dialogue",
+      "2e58bc57-0e90-4f38-b77b-8cf4400de514": "English_dialogue",
+      "dfd01f8f-cc1d-4503-9f66-4977acc78480": "English_chat",
+      "4bf5cbef-b098-4628-b503-0533c946362b": "English_chat",
+      "b02c0df7-0a86-4bea-9b96-7ec2f73b2feb": "English_chat",
+      "69e1fe5b-de4c-4302-b88b-69c381460443": "English_conversation",
+      "9de26a0a-937a-4b3c-8850-0e62c91b37cd": "English_dialogue",
+      "158639b8-0592-437e-b3bd-4894f1942432": "Chinese_dialogue",
+      "a58bcf8c-3f18-462b-bef3-ab7a7f0c38d5": "Chinese_dialogue"
     }
     return inputKeyMap[uuid] || "unknown"
   }
